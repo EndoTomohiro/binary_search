@@ -22,7 +22,7 @@ int p(unsigned int x, unsigned int n, unsigned int k){
       j++;
     }
   }
-  return(i);
+  return i == n - 1;
 }
 
 int main(){
@@ -36,7 +36,7 @@ int main(){
 
   while(ub - lb > 1){
     int mid = (lb + ub) / 2;
-    if(p(mid, n, k) == n - 1) ub = mid;
+    if(p(mid, n, k)) ub = mid;
     else lb = mid;
   }
 

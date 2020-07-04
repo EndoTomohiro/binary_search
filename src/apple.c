@@ -12,21 +12,21 @@ int p(int t){
   for(i = 0; i < n; i++){
     x += (A[i] + t - 1) / t;
   }
-  return(x);
+  return x <= k;
 }
 
 int main(){
   int i;
   scanf("%d%d", &n, &k);
   int lb = 0;
-  int ub = 100000;
+  int ub = 1000000000;
   for(i = 0; i < n; i++){
     scanf("%d", &A[i]);
   }
 
   while(ub - lb > 1){
     int mid = (lb + ub) / 2;
-    if(p(mid) <= k) ub = mid;
+    if(p(mid)) ub = mid;
     else lb = mid;
   }
 
