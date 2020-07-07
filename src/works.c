@@ -6,23 +6,16 @@ int A[100000];
 
 
 int p(unsigned int x, unsigned int n, unsigned int k){
-  int j = 0;
-  int i = -1;
-  int y = 0;
-  while(j < k){
-    if(y + A[i+1] <= x){
-      i++;
-      if(i < n - 1){
+  int i = 0;
+  int j;
+  for(j = 0; j < k; j++){
+    int y = 0;
+    while(i < n && y + A[i] <= x){
       y += A[i];
-      }
-      else break;
-    }
-    else{
-      y = 0;
-      j++;
+      i++;
     }
   }
-  return i == n - 1;
+  return i == n;
 }
 
 int main(){
@@ -41,5 +34,7 @@ int main(){
   }
 
   printf("%d\n", ub);
+
+  return 0;
 
 }

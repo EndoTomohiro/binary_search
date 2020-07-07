@@ -3,7 +3,6 @@
 int n;
 int k;
 int A[100000];
-int B[100000];
 
 
 int p(int t){
@@ -31,4 +30,7 @@ int main(){
   }
 
   printf("%d\n", ub);
+
+  return 0;
+
 }
